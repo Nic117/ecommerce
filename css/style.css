@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
@@ -30,12 +30,12 @@ a {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 6fr;
     background-color: var(--clr-main);
 }
 
 aside {
-    padding: 2rem;
+    padding: 1rem;
     padding-right: 0;
     color: var(--clr-white);
     position: sticky;
@@ -51,6 +51,7 @@ aside {
     font-size: 2rem;
 }
 
+ /*fix */
 .menu {
     display: flex;
     flex-direction: column;
@@ -66,9 +67,9 @@ aside {
     align-items: center;
     gap: 1.5rem;
     font-weight: 700;
-    padding: 2rem;
-    font-size: 1.3rem;
-    width: 120%;
+    padding: 1.8rem;
+    font-size: 1.2rem;
+    width: 130%;
     border-radius: 0.5rem;
     transition: background-color 0.3s ease;
 }
@@ -86,9 +87,10 @@ aside {
     border-bottom-left-radius: 1rem;
     position: relative;
     font-size: 1.2rem; 
-    font-weight: 700; 
-    
+    font-weight: 500;
+    padding: 1rem 1rem;
 }
+
 
 .boton-menu.active::before {
     content: '';
