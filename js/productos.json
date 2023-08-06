@@ -1,0 +1,124 @@
+[
+    {
+        "id": "telefono-01",
+        "titulo": "Poco F5 128Gb.",
+        "imagen": "./img/telefonos/01.png",
+        "categoria": {
+            "nombre": "Telefono",
+            "id": "telefonos"
+        },
+        "precio": 450
+    },
+    {
+        "id": "telefono-02",
+        "titulo": "OnePlus 11 128Gb",
+        "imagen": "./img/telefonos/02.png",
+        "categoria": {
+            "nombre": "Telefono",
+            "id": "telefonos"
+        },
+        "precio": 1200
+    },
+    {
+        "id": "telefono-03",
+        "titulo": "Motorola 30 Neo 128Gb",
+        "imagen": "./img/telefonos/03.jpg",
+        "categoria": {
+            "nombre": "Telefono",
+            "id": "telefonos"
+        },
+        "precio": 530
+    },
+    {
+        "id": "telefono-04",
+        "titulo": "Motorola edge 40 256Gb",
+        "imagen": "./img/telefonos/04.png",
+        "categoria": {
+            "nombre": "Telefono",
+            "id": "telefonos"
+        },
+        "precio": 900
+    },
+    {
+        "id": "telefono-05",
+        "titulo": "Xiaomi 12T pro 128Gb",
+        "imagen": "./img/telefonos/08.webp",
+        "categoria": {
+            "nombre": "Telefono",
+            "id": "telefonos"
+        },
+        "precio": 890
+    },
+    {
+        "id": "telefono-06",
+        "titulo": "Poco X5 pro 128Gb",
+        "imagen": "./img/telefonos/07.jpg",
+        "categoria": {
+            "nombre": "Telefono",
+            "id": "telefonos"
+        },
+        "precio": 430
+    },
+    {
+        "id": "telefono-07",
+        "titulo": "Iphone 14 Pro Max",
+        "imagen": "./img/telefonos/09.jpg",
+        "categoria": {
+            "nombre": "Telefono",
+            "id": "telefonos"
+        },
+        "precio": 2000
+    },
+    {
+        "id": "telefono-08",
+        "titulo": "Samsung S23 Ultra",
+        "imagen": "./img/telefonos/10.webp",
+        "categoria": {
+            "nombre": "Telefono",
+            "id": "telefonos"
+        },
+        "precio": 1340
+    },
+    {
+        "id": "laptop-11",
+        "titulo": "Lenovo Thinkpad",
+        "imagen": "./img/laptops/11.jpg",
+        "categoria": {
+            "nombre": "Laptops",
+            "id": "laptops"
+        },
+        "precio": 1360
+    },
+    {
+        "id": "laptop-12",
+        "titulo": "Asus VivoBook",
+        "imagen": "./img/laptops/12.jpg",
+        "categoria": {
+            "nombre": "Laptops",
+            "id": "laptops"
+        },
+        "precio": 1440
+    },
+    {
+        "id": "laptop-13",
+        "titulo": "Asus TUF",
+        "imagen": "./img/laptops/13.png",
+        "categoria": {
+            "nombre": "Laptops",
+            "id": "laptops"
+        },
+        "precio": 1300
+    },
+    {
+        "id": "laptop-14",
+        "titulo": "Macbook Pro 14",
+        "imagen": "./img/laptops/14.jpg",
+        "categoria": {
+            "nombre": "Laptops",
+            "id": "laptops"
+        },
+        "precio": 1600
+    }
+  
+    
+]
