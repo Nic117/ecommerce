@@ -1,10 +1,10 @@
 let productos = [];
-
+// solicitud Fetch para obtener los datos de un archivo JSON de productos
 fetch("./js/productos.json")
-    .then(response => response.json())
+    .then(response => response.json()) // Convierte la respuesta en formato JSON
     .then(data => {
-        productos = data;
-        cargarProductos(productos);
+        productos = data; // Asigna los datos al arreglo productos
+        cargarProductos(productos); // Llama a la función para cargar los productos 
     })
 
 
@@ -19,13 +19,14 @@ botonesCategorias.forEach(boton => boton.addEventListener("click", () => {
     aside.classList.remove("aside-visible");
 }))
 
-
+// Función para cargar productos en la interfaz
 function cargarProductos(productosElegidos) {
 
     contenedorProductos.innerHTML = "";
 
+// Itera a través de los productos elegidos y crea elementos en la interfaz
     productosElegidos.forEach(producto => {
-
+// Crea un nuevo elemento div que representa cada producto
         const div = document.createElement("div");
         div.classList.add("producto");
         div.innerHTML = `
@@ -36,21 +37,23 @@ function cargarProductos(productosElegidos) {
                 <button class="producto-agregar" id="${producto.id}">Agregar</button>
             </div>
         `;
-
+ // Agrega el nuevo elemento div con los detalles del producto al contenedor de productos
         contenedorProductos.append(div);
     })
 
     actualizarBotonesAgregar();
 }
 
-
+// Evento de clic a cada botón de categoría
 botonesCategorias.forEach(boton => {
     boton.addEventListener("click", (e) => {
-
+   // Remueve la clase "active" de todos los botones de categoría
         botonesCategorias.forEach(boton => boton.classList.remove("active"));
+         // Agrega la clase "active" al botón de categoría que el usuario hizo clic
         e.currentTarget.classList.add("active");
-
+        //verifica si hizo clic en la opcion todos
         if (e.currentTarget.id != "todos") {
+             // Encuentra el producto de la categoría seleccionada
             const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id);
             tituloPrincipal.innerText = productoCategoria.categoria.nombre;
             const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id);
@@ -63,6 +66,7 @@ botonesCategorias.forEach(boton => {
     })
 });
 
+// Función para actualizar los botones de agregar productos
 function actualizarBotonesAgregar() {
     botonesAgregar = document.querySelectorAll(".producto-agregar");
 
@@ -73,10 +77,12 @@ function actualizarBotonesAgregar() {
 
 let productosEnCarrito;
 
+// Obtiene los productos en el carrito almacenados en el local storage
 let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
 
 if (productosEnCarritoLS) {
     productosEnCarrito = JSON.parse(productosEnCarritoLS);
+    // Llama a la función para actualizar el numerito del carrito
     actualizarNumerito();
 } else {
     productosEnCarrito = [];
@@ -84,7 +90,7 @@ if (productosEnCarritoLS) {
 
 function agregarAlCarrito(e) {
 
-    Toastify({
+    Toastify({  //muestra en pantalla este mensaje
         text: "Producto agregado",
         duration: 3000,
         close: true,
@@ -104,13 +110,17 @@ function agregarAlCarrito(e) {
         onClick: function(){} 
       }).showToast();
 
+// Obtiene el ID del botón que inicio el evento
     const idBoton = e.currentTarget.id;
+    // Busca el producto en el arreglo de productos segun su ID
     const productoAgregado = productos.find(producto => producto.id === idBoton);
-
+// Verifica si el producto ya está en el carrito
     if(productosEnCarrito.some(producto => producto.id === idBoton)) {
         const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+        //incrementa los productos
         productosEnCarrito[index].cantidad++;
     } else {
+        // Si el producto no está en el carrito, agrega una propiedad de cantidad y establece en 1
         productoAgregado.cantidad = 1;
         productosEnCarrito.push(productoAgregado);
     }
@@ -119,7 +129,7 @@ function agregarAlCarrito(e) {
 
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
-
+// Actualiza el numerito del carrito en la interfaz
 function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
